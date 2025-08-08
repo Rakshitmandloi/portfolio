@@ -425,7 +425,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-4">
+      <section id="services" className="py-20 px-4 pt-32">
         <div className="container mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -720,7 +720,7 @@ export default function Home() {
                 
                 <p className="text-gray-300 leading-relaxed mb-8 text-lg">
                   Engineering optimized and seamless backend solutions at a network security leader, 
-                  driven by a competitive programmer's mindset for achieving peak performance and efficiency. 
+                  driven by a competitive programmer&apos;s mindset for achieving peak performance and efficiency. 
                   Expert in building scalable systems with a focus on security and performance optimization.
                 </p>
 
@@ -803,7 +803,7 @@ export default function Home() {
             <div className="bg-gradient-to-br from-slate-800/40 to-slate-700/40 backdrop-blur-lg rounded-3xl p-12 border border-slate-600/30">
               <h3 className="text-3xl font-bold text-white mb-8">Our Shared Vision</h3>
               <p className="text-gray-300 text-xl leading-relaxed max-w-5xl mx-auto mb-12">
-                Together, we're building a consultancy that bridges the gap between complex business challenges 
+                Together, we&apos;re building a consultancy that bridges the gap between complex business challenges 
                 and innovative technology solutions. Combining competitive programming excellence with enterprise 
                 software expertise, we deliver scalable, secure, and optimized solutions for global businesses.
               </p>
@@ -857,7 +857,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4">
+      <section id="projects" className="py-20 px-4 pt-32">
         <div className="container mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -1025,7 +1025,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-slate-800/20">
+      <section id="contact" className="py-20 px-4 bg-slate-800/20 pt-32">
         <div className="container mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -1038,7 +1038,7 @@ export default function Home() {
               Get In <span className="text-blue-400">Touch</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Ready to transform your business? Let's discuss how our elite engineering team can help you achieve your goals.
+              Ready to transform your business? Let&apos;s discuss how our elite engineering team can help you achieve your goals.
             </p>
           </motion.div>
 
@@ -1049,7 +1049,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold text-white mb-8">Let's Start a Conversation</h3>
+              <h3 className="text-2xl font-bold text-white mb-8">Let&apos;s Start a Conversation</h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -1059,7 +1059,7 @@ export default function Home() {
                     <h4 className="text-lg font-semibold text-white mb-1">Email</h4>
                     <p className="text-gray-300">rakshitmandloi@gmail.com</p>
                     <p className="text-gray-300">bansalharshit55@gmail.com</p>
-                    <p className="text-gray-400 text-sm">We'll respond within 24 hours</p>
+                    <p className="text-gray-300">We&apos;ll respond within 24 hours</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -1190,7 +1190,7 @@ export default function Home() {
                 {/* Status Messages */}
                 {submitStatus === 'success' && (
                   <div className="p-4 bg-green-500/20 border border-green-400/30 rounded-lg">
-                    <p className="text-green-400 text-sm">✅ Message sent successfully! We'll get back to you within 24 hours.</p>
+                    <p className="text-green-400 text-sm">✅ Message sent successfully! We&apos;ll get back to you within 24 hours.</p>
                   </div>
                 )}
                 
