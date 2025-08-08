@@ -246,7 +246,7 @@ export default function About() {
               Ready to Work With Us?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Let's discuss how our expertise can help transform your business
+              Let&apos;s discuss how our expertise can help transform your business
             </p>
             <Button variant="gradient" size="lg" asChild>
               <Link href="/contact">Get In Touch</Link>
