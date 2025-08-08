@@ -12,20 +12,20 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { href: '/', label: 'Home', icon: Code },
-    { href: '/#services', label: 'Services', icon: Zap },
-    { href: '/about', label: 'About Us', icon: Users },
-    { href: '/projects', label: 'Projects', icon: Briefcase },
-    { href: '/contact', label: 'Contact', icon: Mail },
+    { href: '#home', label: 'Home', icon: Code },
+    { href: '#services', label: 'Services', icon: Zap },
+    { href: '#about', label: 'About', icon: Users },
+    { href: '#projects', label: 'Projects', icon: Briefcase },
+    { href: '#contact', label: 'Contact', icon: Mail },
   ];
 
   const handleSmoothScroll = (e: React.MouseEvent, href: string) => {
-    if (href.startsWith('/#')) {
-      e.preventDefault();
-      const element = document.getElementById(href.slice(2));
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+    e.preventDefault();
+    const elementId = href === '#home' ? 'hero' : href.slice(1);
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false); // Close mobile menu after navigation
     }
   };
 
@@ -48,41 +48,26 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => {
-              const isActive = pathname === item.href;
+              const isActive = false; // We'll handle active state differently for single page
               return (
-                <Link key={item.href} href={item.href}>
+                <button
+                  key={item.href}
+                  onClick={(e) => handleSmoothScroll(e, item.href)}
+                  className="relative px-3 py-2 rounded-lg transition-colors text-gray-300 hover:text-white focus:outline-none"
+                >
                   <motion.div
-                    className={`relative px-3 py-2 rounded-lg transition-colors ${
-                      isActive
-                        ? 'text-blue-400'
-                        : 'text-gray-300 hover:text-white'
-                    }`}
+                    className="flex items-center space-x-2"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={(e) => handleSmoothScroll(e, item.href)}
                   >
-                    <div className="flex items-center space-x-2">
-                      <item.icon className="w-4 h-4" />
-                      <span>{item.label}</span>
-                    </div>
-                    {isActive && (
-                      <motion.div
-                        className="absolute inset-0 bg-blue-500/20 rounded-lg"
-                        layoutId="activeBackground"
-                        initial={false}
-                        transition={{
-                          type: 'spring',
-                          stiffness: 500,
-                          damping: 30,
-                        }}
-                      />
-                    )}
+                    <item.icon className="w-4 h-4" />
+                    <span>{item.label}</span>
                   </motion.div>
-                </Link>
+                </button>
               );
             })}
-            <Button variant="gradient" asChild>
-              <Link href="/contact">Get Started</Link>
+            <Button variant="gradient" onClick={(e) => handleSmoothScroll(e, '#contact')}>
+              Get Started
             </Button>
           </div>
 
@@ -106,32 +91,29 @@ export function Navigation() {
         >
           <div className="py-4 space-y-2">
             {navItems.map((item) => {
-              const isActive = pathname === item.href;
               return (
-                <Link
+                <button
                   key={item.href}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleSmoothScroll(e, item.href)}
+                  className="w-full text-left"
                 >
                   <motion.div
-                    className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
-                      isActive
-                        ? 'bg-blue-500/20 text-blue-400'
-                        : 'text-gray-300 hover:bg-white/10 hover:text-white'
-                    }`}
+                    className="flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors text-gray-300 hover:bg-white/10 hover:text-white"
                     whileTap={{ scale: 0.95 }}
                   >
                     <item.icon className="w-5 h-5" />
                     <span>{item.label}</span>
                   </motion.div>
-                </Link>
+                </button>
               );
             })}
             <div className="px-4 pt-2">
-              <Button variant="gradient" className="w-full" asChild>
-                <Link href="/contact" onClick={() => setIsOpen(false)}>
-                  Get Started
-                </Link>
+              <Button 
+                variant="gradient" 
+                className="w-full" 
+                onClick={(e) => handleSmoothScroll(e, '#contact')}
+              >
+                Get Started
               </Button>
             </div>
           </div>
