@@ -6,9 +6,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  // Temporarily enable GitHub Pages path for sharing
-  basePath: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
+  // Configure for GitHub Pages with repository name
+  basePath: '/portfolio',
+  assetPrefix: '/portfolio',
 };
 
 export default nextConfig;
